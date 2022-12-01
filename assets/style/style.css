@@ -27,7 +27,13 @@ nav{
     justify-content:center;
     align-items: center;
 }
-
+span{
+    font-weight: bold;
+    font-size: 15px;
+}
+h5{
+    font-weight: bold;
+}
 .bodycard{
     display: flex;
     justify-content:space-between;
