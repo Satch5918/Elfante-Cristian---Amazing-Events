@@ -33,6 +33,8 @@ span{
 }
 h5{
     font-weight: bold;
+    font-size: 21px;
+    text-shadow: 2px 2px 4px rgb(255, 255, 255);
 }
 .bodycard{
     display: flex;
@@ -133,8 +135,11 @@ color: #202c2d
 #lupa{
     height: 25px;
 }
-
-#seccion2{
+.textocard{
+    font-size: 16px;
+    font-weight: bold;
+}
+.seccion2{
     margin: 100px 0;
     display: flex;
     flex-direction: column;
