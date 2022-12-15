@@ -110,13 +110,16 @@ color: #202c2d
 #seccion1{
     margin-top: 50px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
 
 }
 .div1sec1{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     gap: 15px;
 }
 
@@ -169,8 +172,8 @@ color: #202c2d
 }
 
 .redsocial{
-    height: 60px;
-    width: 60px;
+    height: 50px;
+    width: 50px;
     margin: 0 20px;
 }
 
@@ -367,6 +370,15 @@ input[type="checkbox"]:checked{
         margin-left:20px ;
     }
 }
+@media (max-width:1025) {
+    .div1sec1{        
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        
+    }
+    
+}
 
 @media (max-width:817px) {
     .div1sec1{
@@ -390,15 +402,17 @@ input[type="checkbox"]:checked{
     #logo{
         height: 60px;
     }
+
     .containerss{
         border : 0;
         display: flex;
         background-color:transparent;
         flex-direction: column;
         height: 90vh;
-        margin-bottom: 50px;
-        
-
+        margin:50px 0;
+    }
+    h3{
+        text-align: center;
     }
     #imgdetail{
         height: 280px;
@@ -431,7 +445,7 @@ display: flex;
 }
 }
 
-@media (max-width:493px) {
+@media (max-width: 558px) {
     .footer{
         display: flex;
         flex-direction: column;
@@ -439,11 +453,8 @@ display: flex;
         align-items: center;
     }
     .redsocial{
-        margin-bottom: 30px;
+        margin-bottom: 5px;
     }
-
-    
-    
 }
 
 @media (min-width:444px) and (max-width:900px){
@@ -452,7 +463,7 @@ display: flex;
         background-color :transparent;
         display: flex;
         flex-direction: column;
-        margin:50px 0;
+        margin:70px 0;
         
 
     }
@@ -475,8 +486,8 @@ display: flex;
 
 }
 #maindetails{
-margin: 50px 0;
-display: flex;
+    margin: 50px 0;
+    display: flex;
     align-items: center;
     justify-content:center;
 }

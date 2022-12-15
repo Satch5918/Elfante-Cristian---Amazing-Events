@@ -37,6 +37,5 @@ const search = document.getElementById('search')
 search.addEventListener('input', () => {
 let filtradoPorBusquedas = filtrados (categorias,datos,search)
 cards(div1,filtradoPorBusquedas)
-
 })
 
