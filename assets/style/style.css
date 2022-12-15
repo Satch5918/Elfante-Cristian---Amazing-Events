@@ -315,6 +315,16 @@ th {
     border: 2px solid black
 }
 
+input[type="checkbox"]{
+    margin: 10px
+}
+
+input[type="checkbox"]:checked{
+    background-color: rgb(17, 149, 72);
+    margin: 10px;
+    border: 2px solid black
+}
+
 @media (max-width: 991px) {
     .anvar{
         background-color: inherit;
