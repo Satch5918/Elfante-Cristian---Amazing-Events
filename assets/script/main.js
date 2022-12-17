@@ -8,7 +8,6 @@ let datos = data.events;
 cards(div1,datos);
 
 const divcheck = document.getElementById('checkboxs');
-const fragment = document.createDocumentFragment();
 
 let categorias = datos.map(elemento => elemento.category)
 let mySet = new Set(categorias);
@@ -20,11 +19,6 @@ inputscheck(categorias,divcheck)
 
 const seccioncheck = document.getElementById('seccion1');
 
-
-/* function filtradosPorCategorias2(categorias,checkevalue){  
-  categorias.filter( categorias => categorias.category === checkevalue )
-}
- */
 let divCheckBox = document.getElementById('checkboxs');
 
 seccioncheck.addEventListener('change', (e) =>{

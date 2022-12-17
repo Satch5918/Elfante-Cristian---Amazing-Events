@@ -41,7 +41,6 @@ export function filtradoPorCategoria(datos,selectedCategories){
 }
 
 export function filtradoPorBusqueda(nombres, searchsvalue){
-
     return nombres.filter(nombre => nombre.name.toLowerCase().includes(searchsvalue.toLowerCase())) 
 }
 

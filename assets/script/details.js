@@ -1,12 +1,8 @@
 let datos = data.events;
 
-/* const queryString = location.search
-const params = new URLSearchParams(queryString)
-const id = params.get('id') */
+const idUrl = new URLSearchParams(location.search).get('id')
 
-const idResumido = new URLSearchParams(location.search).get('id')
-
-const finded = datos.find(item => item._id == idResumido)
+const finded = datos.find(item => item._id == idUrl)
 
 const contenedor = document.getElementById('contenedor')
 
