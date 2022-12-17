@@ -1,22 +1,14 @@
-let datos = data.events;
-
-const idUrl = new URLSearchParams(location.search).get('id')
-
-const finded = datos.find(item => item._id == idUrl)
-
+import {CardDetails} from '../../module/funciones.js'
+let datos;
+let finded;
+let idUrl;
 const contenedor = document.getElementById('contenedor')
 
-contenedor.innerHTML = `<div id="divdetals1">
-<img id="imgdetail" src=${finded.image} alt="">
-</div>
-<div id="divdetals2">
-<h3>${finded.name}</h3>
-<h4>${finded.category}</h4>
-<p class="pdetails" >${finded.description}</p>
-<p>Place: ${finded.place} </p>
-<p>Price: $${finded.price}</p>
-<div class="btn-group ">
-  <a href="#" class="btn btn-primary active butonDetails" aria-current="page">Buy</a>
-  <a href="./index.html" class="btn btn-primary butonDetails">Back</a>
-</div>
-</div>`
+fetch('https://amazing-events.onrender.com/api/events')
+  .then(result => result.json())
+  .then(capturarDatos =>{
+    datos = capturarDatos.events
+    idUrl = new URLSearchParams(location.search).get('id')
+    finded = datos.find(item => item._id == idUrl)
+    CardDetails(contenedor,finded)
+  })

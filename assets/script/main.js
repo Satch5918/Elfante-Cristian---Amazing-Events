@@ -1,32 +1,28 @@
 import {cards, inputscheck, filtradoPorCategoria, filtradoPorBusqueda, filtrados } from '../../module/funciones.js'
 
 const div1 = document.getElementById('divrow');
-let datos = data.events;
-
-
-
-cards(div1,datos);
-
 const divcheck = document.getElementById('checkboxs');
-
-let categorias = datos.map(elemento => elemento.category)
-let mySet = new Set(categorias);
-categorias = Array.from(mySet);
-
-
-
-inputscheck(categorias,divcheck)
-
 const seccioncheck = document.getElementById('seccion1');
+const search = document.getElementById('search')
 
-let divCheckBox = document.getElementById('checkboxs');
+let datos;
+let categorias;
+
+fetch('https://amazing-events.onrender.com/api/events')
+  .then(result => result.json())
+  .then(capturarDatos =>{
+    datos = capturarDatos.events;
+    categorias = datos.map(elemento => elemento.category)
+    let mySet = new Set(categorias);
+    categorias = Array.from(mySet);
+    cards(div1,datos);
+    inputscheck(categorias,divcheck)
+} )
 
 seccioncheck.addEventListener('change', (e) =>{
   let filtradoPorBusquedas = filtrados (categorias,datos,search)
   cards(div1,filtradoPorBusquedas)
 })
-
-const search = document.getElementById('search')
 
 search.addEventListener('input', () => {
 let filtradoPorBusquedas = filtrados (categorias,datos,search)

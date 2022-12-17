@@ -50,3 +50,21 @@ export function filtrados (categorias,datos,search){
     
     return filtradoPorBusquedas;
 }
+
+export function CardDetails(contain,datosCard){
+  contain.innerHTML = `<div id="divdetals1">
+  <img id="imgdetail" src=${datosCard.image} alt="">
+  </div>
+  <div id="divdetals2">
+  <h3>${datosCard.name}</h3>
+  <h4>${datosCard.category}</h4>
+  <p class="pdetails" >${datosCard.description}</p>
+  <p>Place: ${datosCard.place} </p>
+  <p>Price: $${datosCard.price}</p>
+  <div class="btn-group ">
+    <a href="#" class="btn btn-primary active butonDetails" aria-current="page">Buy</a>
+    <a href="./index.html" class="btn btn-primary butonDetails">Back</a>
+  </div>
+  </div>`
+  
+}
