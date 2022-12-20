@@ -11,4 +11,6 @@ fetch('https://amazing-events.onrender.com/api/events')
     idUrl = new URLSearchParams(location.search).get('id')
     finded = datos.find(item => item._id == idUrl)
     CardDetails(contenedor,finded)
-  })
+  }).catch( error => {
+    console.log("error");
+  });

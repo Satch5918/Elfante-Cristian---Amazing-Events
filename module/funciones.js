@@ -68,3 +68,43 @@ export function CardDetails(contain,datosCard){
   </div>`
   
 }
+
+export function stats (contain,events,asistEstimate,fragment) {    
+  events.forEach(stats => { 
+      let div = document.createElement('tr');
+      div.innerHTML = `
+      <td>${stats.category}</td>
+      <td>$ ${(stats[asistEstimate] * stats.price).toLocaleString()} </td>
+      <td>${((stats[asistEstimate] *100) / stats.capacity).toFixed(2)} %</td>
+      `;
+      fragment.appendChild(div)    
+  });
+contain.appendChild(fragment);
+}
+
+export function mayorCapacidad(events,contain) {
+  const resultados = events.map(element => element.capacity);
+  let max = Math.max(...resultados);
+  let eventoConMayorCapacidad = events.find( elemtn => elemtn.capacity === max );
+  contain.innerHTML = `${eventoConMayorCapacidad.name} &nbsp&nbsp Capacity: ${eventoConMayorCapacidad.capacity.toLocaleString()}`;
+}
+
+export function getMaxPercentage(array,contain) {
+ let arraymin = array.map(elemnt => ({nombre: elemnt.name,
+porcent: ((elemnt.assistance * 100) / elemnt.capacity)}) ).sort((a,b) =>
+b.porcent - a.porcent
+)[0]
+contain.innerHTML = `<tr>
+<td>${arraymin.nombre}  ${arraymin.porcent.toFixed(2)} %</td>
+` 
+} 
+
+export function getMinPercentage(array, contain) {
+let arraymin = array.map(elemnt => ({nombre: elemnt.name,
+porcent: ((elemnt.assistance * 100) / elemnt.capacity)}) ).sort((a,b) =>
+b.porcent - a.porcent
+)[array.length - 1]
+contain.innerHTML = `<tr>
+<td>${arraymin.nombre}  ${arraymin.porcent.toFixed(2)} %</td>` 
+}
+

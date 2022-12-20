@@ -18,7 +18,9 @@ fetch('https://amazing-events.onrender.com/api/events')
     categorias = Array.from(mySet);
     cards(div2,uncoming);
     inputscheck(categorias,divcheck)
-} )
+} ).catch( error => {
+  console.log("error");
+});
 
 seccioncheck.addEventListener('change', (e) =>{
   let filtradoPorBusquedas = filtrados (categorias,uncoming,search)
