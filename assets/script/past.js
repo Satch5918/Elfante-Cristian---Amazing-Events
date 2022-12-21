@@ -13,7 +13,7 @@ fetch('https://amazing-events.onrender.com/api/events')
   .then(result => result.json())
   .then(capturarDatos =>{
     datos = capturarDatos.events;
-    past = datos.filter( card => card.date < data.currentDate)
+    past = datos.filter( card => card.date < capturarDatos.currentDate)
     categorias = past.map(elemento => elemento.category)
     let mySet = new Set(categorias);
     categorias = Array.from(mySet);
@@ -32,4 +32,3 @@ search.addEventListener('input', () => {
 let filtradoPorBusquedas = filtrados (categorias,past,search)
 cards(div3,filtradoPorBusquedas)
 })
-

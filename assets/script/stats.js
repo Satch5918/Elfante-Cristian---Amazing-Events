@@ -25,7 +25,7 @@ fetch('https://amazing-events.onrender.com/api/events')
     getMinPercentage(past,td2); 
     mayorCapacidad(datos,td3) 
 } ).catch( error => {
-    console.log("error");
-  });
+    console.log("error:",error);
+});
 
 

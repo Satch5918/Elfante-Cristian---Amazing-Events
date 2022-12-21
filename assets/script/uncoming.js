@@ -12,14 +12,14 @@ fetch('https://amazing-events.onrender.com/api/events')
   .then(result => result.json())
   .then(capturarDatos =>{
     datos = capturarDatos.events;
-    uncoming = datos.filter( card => card.date >= data.currentDate)
+    uncoming = datos.filter( card => card.date >= capturarDatos.currentDate)
     categorias = uncoming.map(elemento => elemento.category)
     let mySet = new Set(categorias);
     categorias = Array.from(mySet);
     cards(div2,uncoming);
     inputscheck(categorias,divcheck)
-} ).catch( error => {
-  console.log("error");
+}).catch( error => {
+  console.log("error:",error);
 });
 
 seccioncheck.addEventListener('change', (e) =>{
